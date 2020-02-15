@@ -1,5 +1,6 @@
 $(document).ready(function(){
-  $('input type=["checkbox"]').change(function(){
-    alert('changed');
+  $('input:checkbox').change(function(el){
+    console.log(el.target.dataset.name);
+    console.log(el.target.dataset);
   });
 });
