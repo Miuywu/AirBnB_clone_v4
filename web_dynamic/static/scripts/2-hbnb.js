@@ -1,16 +1,17 @@
-const request = require('request');
-
-request.get(`http://0.0.0.0:5001/api/v1/status/`, (error, response, body) => {
-  if (response.status === "OK") {
-      //add the class available to the DIV#api_status;
-      } else {
-	  //remove the class available to the DIV#api_status;
-}
+fetch('http://0.0.0.0:5001/api/v1/status/').then(resp => {
+  if (resp.statusText === "OK") {
+    $('#api_status').removeClass('available');
+    $('#api_status').addClass('available');
+  } else {
+    $('#api_status').removeClass('available');
+  }
+}).catch(err => {
+  console.log(err, 'OH NO.mpeg');
 });
 
-$(document).ready(function(){
+$(document).ready(function () {
   const dict = {};
-  $('input:checkbox').change(function(el){
+  $('input:checkbox').change(function (el) {
     if (this.checked) {
       if (!dict[el.target.dataset.name]) {
         dict[el.target.dataset.name] = true;
