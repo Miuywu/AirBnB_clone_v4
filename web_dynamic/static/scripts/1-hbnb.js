@@ -8,6 +8,7 @@ $(document).ready(function(){
     } else {
       delete dict[el.target.dataset.name];
     }
-    // $('.amenities h4').html(dict.keys());
+    const amens = Object.keys(dict);
+    $('.amenities h4').html(amens.length ? amens.join(', ') : '&nbsp;');
   });
 });
