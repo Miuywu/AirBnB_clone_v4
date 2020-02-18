@@ -219,6 +219,7 @@ github repo
 * Jared Heck, [jarehec](https://github.com/jarehec) | [@jarehec](https://twitter.com/jarehec)
 * Minh-Huy Vu [Miuywu](https://github.com/miuywu) | trulymhvu@gmail.com
 * Ben Cook [Benjamesian](https://github.com/benjamesian) | 808@holbertonschool.com
+* Yashar Mateen [yasheymateen](https://github.com/yasheymateen) | yasheymateen@gmail.com
 
 ## License
 
