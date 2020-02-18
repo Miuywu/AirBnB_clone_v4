@@ -68,42 +68,7 @@ $(document).ready(function () {
       console.log(place);
     }
   });
-  $('section.filters button').on('click', function() {
-    let allChecked = $('li: :checkbox:checked').map(function () {
-      return $(this).attr('data-name');
-    });
-    console.log(allChecked);
-    console.log(allChecked.length);
-
-    $.ajax({
-      url: 'http://0.0.0.0:5001/api/v1/places_search/',
-      type: 'post',
-      contentType: 'application/json',
-      data: JSON.stringify({amenities: allChecked})
-    }).done((res) => {
-      console.log(res);
-      console.log('Response changing amenities: ' + res);
-      const places = $('section.places');
-      places.empty();
-
-      for (let place of res) {
-        let article = $('<article></article>');
-
-        article.append('<div class="price_by_night">$' + place.price_by_night + '</div>');
-        article.append('<h2>' + place.name + '</h2>');
-        let subdiv = $('<div class="informations"></div>')
-        subdiv.append('<div class="max_guest">' + place.max_guest + ' Guests</div>');
-        subdiv.append('<div class="number_rooms">' + place.number_rooms + ' Rooms</div>');
-        subdiv.append('<div class="number_bathrooms">' + place.number_bathrooms + ' Bathrooms</div>');
-        article.append(subdiv);
-        article.append('<div class="description">' + place.description + '</div>');
-
-        places.append(article);
-      };
-    });
-  });
-  /*
-    $('button').click(function () {
+  $('button').click(function () {
     $.ajax({
       url: 'http://0.0.0.0:5001/api/v1/places_search/',
       type: 'post',
@@ -147,5 +112,5 @@ $(document).ready(function () {
       console.log(place);
         }
       }
-*/
-})})});
+
+    })})});
